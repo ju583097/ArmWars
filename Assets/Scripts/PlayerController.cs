@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
     public int pressesPerSecond = 5; // Number of presses per second
@@ -9,11 +9,18 @@ public class PlayerController : MonoBehaviour
     public int threshold = 150; //Threshold for winning
     public float timeLimit = 60f; //Time limit for the game
     private float currentTime; //Current time remaining
-    public Text timerText; //Reference to UI text displaying the timer
+   public TextMeshProUGUI timerText; //Reference to TextMeshProUGUI for displaying timer
+    public AIController aiController; //Reference to AI controller script
+    public TextMeshProUGUI countdownText; //Reference to TextMeshProUGUI for displaying intial countdown
+    public float countdownDuration = 3f;
+
+    private bool gameOver = false; //Tracking the game to make sure timer does not continue after game is over
+    private bool countdownFinished = false; //Tracks if countdown has finished
 
     // Start is called before the first frame update
     void Start()
     {
+        StartCountdown(); //Start the countdown when the game starts
         currentTime = timeLimit;
         UpdateTimerDisplay();
     }
@@ -23,6 +30,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      if (!gameOver && countdownFinished) //Only update time if the game is not over and allow game logic after countdown finishes
+      {
         currentTime -= Time.deltaTime; //Decrement current time
         UpdateTimerDisplay(); //Update UI timer display
 
@@ -38,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             GameOver("Time's up!");
         }
+      }
     }
 
 
@@ -53,12 +63,64 @@ public class PlayerController : MonoBehaviour
 
      void CheckWinCondition()
     {
-        if (currentPresses >= 150);
+        if (currentPresses >= 150)
+        {
+            GameOver("Congratulations! You Win!");
+        }
+        else if (aiController.currentPresses >= threshold)
+        {
+            GameOver("Defeated!");
+        }
     }
 
 
+
+
+void StartCountdown()
+    {
+        StartCoroutine(CountdownCoroutine());
+    }
+
+    private System.Collections.IEnumerator CountdownCoroutine()
+    {
+        int count = 3;
+        while (count > 0)
+        {
+            countdownText.text = count.ToString();
+            yield return new WaitForSeconds(1f);
+            count--;
+        }
+
+        countdownText.text = "WRESTLE!";
+        yield return new WaitForSeconds(1f);
+
+        countdownFinished = true; // Set countdownFinished to true
+        StartGame();
+    }
+
+    void StartGame()
+    {
+        // Implement logic to start the game or transition to the next scene
+        Debug.Log("Game started!");
+
+         // Activate player controller
+         GetComponent<PlayerController>().enabled = true;
+    
+         // Activate AI controller
+         aiController.enabled = true;
+    
+         // Optionally, reset any game variables
+        currentPresses = 0;
+        currentTime = timeLimit;
+    
+        // Optionally, reset UI elements
+        UpdateTimerDisplay();
+        countdownText.text = "";
+       }
+
     void GameOver(string message)
     {
+        gameOver = true; //Set game over to be true
         Debug.Log("Game Over!");
     }
 }
