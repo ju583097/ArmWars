@@ -1161,6 +1161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157889030}
   - component: {fileID: 1157889029}
+  - component: {fileID: 1157889031}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1210,7 +1211,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.6132076, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1235,6 +1236,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157889031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157889028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7580690817f884196457412acd8b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 2007092585}
+  aiController: {fileID: 2119051254}
+  backgroundSpriteRenderer: {fileID: 1157889029}
+  playerWinColor: {r: 0.1462264, g: 0.4040964, b: 1, a: 0}
+  aiWinColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 0}
+  alphaThreshold: 0.5
 --- !u!1 &1205529501
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2082,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.1750474, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2168,7 +2187,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.020182133, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.0766139, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2208,3 +2227,4 @@ MonoBehaviour:
   pressesPerSecond: 5
   currentPresses: 0
   threshold: 150
+  timeLimit: 60
