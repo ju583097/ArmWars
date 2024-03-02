@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +15,8 @@ public class PlayerController : MonoBehaviour
     public AIController aiController; //Reference to AI controller script
     public TextMeshProUGUI countdownText; //Reference to TextMeshProUGUI for displaying intial countdown
     public float countdownDuration = 3f;
-
+    public GameObject winPanel; 
+    public Button nextLevelButton; 
     private bool gameOver = false; //Tracking the game to make sure timer does not continue after game is over
     private bool countdownFinished = false; //Tracks if countdown has finished
 
@@ -65,12 +68,31 @@ public class PlayerController : MonoBehaviour
     {
         if (currentPresses >= 150)
         {
-            GameOver("Congratulations! You Win!");
+            WinGame();
         }
         else if (aiController.currentPresses >= threshold)
         {
             GameOver("Defeated!");
         }
+    }
+
+
+
+    void WinGame()
+    {
+        winPanel.SetActive(true);
+        enabled = false; //Disables player controller when win panel gets active
+    }
+
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu"); 
     }
 
 
