@@ -2224,7 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8db4f8c911e065478c56d9aa4b2340c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pressesPerSecond: 3
+  pressesPerSecond: 6
   currentPresses: 0
   threshold: 150
   timeLimit: 60

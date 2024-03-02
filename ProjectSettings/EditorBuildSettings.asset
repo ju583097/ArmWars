@@ -14,4 +14,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScreen.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LVL 2.unity
+    guid: 5825c090a81f1894da6eaf09a64e0bbd
+  - enabled: 1
+    path: Assets/Scenes/LVL 3.unity
+    guid: 3d718a005c0b3ba45ba3a330f3be2371
+  - enabled: 1
+    path: Assets/Scenes/LVL 4.unity
+    guid: dc87cd51d5da0c84b87a36cfb15f81e5
+  - enabled: 1
+    path: Assets/Scenes/LVL 5.unity
+    guid: 32e1b4b2a132863429cb48a6e869fe73
+  - enabled: 1
+    path: Assets/Scenes/LVL 6.unity
+    guid: f63f9fe5a1cb6e0449ed6703975c2c79
+  - enabled: 1
+    path: Assets/Scenes/LVL 7.unity
+    guid: 2ea6036a9aa45c0468d64840a273481b
+  - enabled: 1
+    path: Assets/Scenes/LVL 8.unity
+    guid: 162783a23282a744fa68306434a7bdbe
+  - enabled: 1
+    path: Assets/Scenes/LVL 9.unity
+    guid: 51ef9aa5b4a10f64ba0b2ccc1fdb2886
+  - enabled: 1
+    path: Assets/Scenes/LVL 10.unity
+    guid: 274911275781d8243bb97733435f4391
   m_configObjects: {}
