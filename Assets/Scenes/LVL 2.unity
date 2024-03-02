@@ -2533,6 +2533,7 @@ GameObject:
   - component: {fileID: 1157889030}
   - component: {fileID: 1157889029}
   - component: {fileID: 1157889031}
+  - component: {fileID: 1157889032}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -2625,6 +2626,19 @@ MonoBehaviour:
   playerWinColor: {r: 0.1462264, g: 0.4040964, b: 1, a: 0}
   aiWinColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 0}
   alphaThreshold: 0.5
+--- !u!114 &1157889032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157889028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4be3d286e77ce74c9a3d7e34522e77a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lvlButtons: []
 --- !u!1 &1205529501
 GameObject:
   m_ObjectHideFlags: 0

@@ -84,6 +84,7 @@ public class PlayerController : MonoBehaviour
     {
         winPanel.SetActive(true);
         enabled = false; //Disables player controller when win panel gets active
+        
     }
 
     void LoseGame()
@@ -93,10 +94,18 @@ public class PlayerController : MonoBehaviour
         enabled = false; //Disables player controller when win panel gets active
 
     }
-    public void NextLevel()
+   public void NextLevel()
+{
+    int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+    SceneManager.LoadScene(nextSceneLoad);
+
+    //Updates the highest level completed in PlayerPrefs 
+    if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        PlayerPrefs.SetInt("levelAt", nextSceneLoad);
     }
+}
+
 
     public void Retry()
     {
@@ -108,6 +117,9 @@ public class PlayerController : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu"); 
     }
+
+
+   
 
 
 

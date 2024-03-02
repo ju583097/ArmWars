@@ -25,4 +25,6 @@ public Button[] lvlButtons;
     {
       SceneManager.LoadScene(levelname);
     }
+
+     
 }
