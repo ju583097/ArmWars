@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countdownText; //Reference to TextMeshProUGUI for displaying intial countdown
     public float countdownDuration = 3f;
     public GameObject winPanel; 
+    public GameObject losePanel;
     public Button nextLevelButton; 
+    public Button retryButton;
     private bool gameOver = false; //Tracking the game to make sure timer does not continue after game is over
     private bool countdownFinished = false; //Tracks if countdown has finished
 
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (!gameOver && countdownFinished) //Only update time if the game is not over and allow game logic after countdown finishes
+      if (!gameOver && countdownFinished  &&  !losePanel.activeSelf) //Only update time if the game is not over and allow game logic after countdown finishes and pauses timer on loss
       {
         currentTime -= Time.deltaTime; //Decrement current time
         UpdateTimerDisplay(); //Update UI timer display
@@ -48,7 +50,7 @@ public class PlayerController : MonoBehaviour
         //Check if time is up
         if (currentTime <= 0)
         {
-            GameOver("Time's up!");
+            LoseGame();
         }
       }
     }
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (aiController.currentPresses >= threshold)
         {
-            GameOver("Defeated!");
+            LoseGame();
         }
     }
 
@@ -84,11 +86,23 @@ public class PlayerController : MonoBehaviour
         enabled = false; //Disables player controller when win panel gets active
     }
 
+    void LoseGame()
+    {
+        
+        losePanel.SetActive(true);
+        enabled = false; //Disables player controller when win panel gets active
 
+    }
     public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     public void QuitToMenu()
     {
@@ -138,11 +152,8 @@ void StartCountdown()
         // Optionally, reset UI elements
         UpdateTimerDisplay();
         countdownText.text = "";
-       }
+       
 
-    void GameOver(string message)
-    {
-        gameOver = true; //Set game over to be true
-        Debug.Log("Game Over!");
+    
     }
 }

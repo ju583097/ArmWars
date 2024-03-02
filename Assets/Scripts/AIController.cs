@@ -10,7 +10,8 @@ public class AIController : MonoBehaviour
     public float timeLimit = 60f;
     private float currentTime;
     private bool countdownFinished = false; //Tracks if countdown has finished
-
+    public GameObject losePanel;
+    private bool timerPaused = false; 
     void Start()
     {
         //Start the countdown coroutine
@@ -23,7 +24,7 @@ public class AIController : MonoBehaviour
             return;
 
         
-        if (currentPresses < threshold)
+        if (currentPresses < threshold && !timerPaused)
         {
            
             if (currentTime > 0)
@@ -65,8 +66,17 @@ public class AIController : MonoBehaviour
     {
         if (currentPresses >= threshold)
         {
-            Debug.Log("AI won!");
+            LoseGame();
            
         }
     }
+
+
+    void LoseGame()
+{
+    losePanel.SetActive(true); 
+    timerPaused = true;
+    CancelInvoke("PressButton"); 
+}
+
 }
