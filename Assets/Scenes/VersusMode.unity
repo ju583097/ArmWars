@@ -4249,10 +4249,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerKeys: 66000000
   playerPresses: 00000000
-  currentPresses: 0
-  threshold: 150
+  threshold: 100
   winPanel: {fileID: 1654174366}
   countdownText: {fileID: 1205529503}
+  currentPresses: 0
 --- !u!1 &2070981634
 GameObject:
   m_ObjectHideFlags: 0
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerKeys: 6c000000
   playerPresses: 00000000
-  currentPresses: 0
-  threshold: 150
+  threshold: 100
   winPanel: {fileID: 1000115070}
   countdownText: {fileID: 1205529503}
+  currentPresses: 0
