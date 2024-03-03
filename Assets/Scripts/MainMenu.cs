@@ -7,17 +7,23 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-    //method to start game
+    //Method to start game
     public void StartGame()
     {
-        // Load the game Scene
+        //Load the game Scene
         SceneManager.LoadScene("LevelSelection");
     }
 
-    // Method to quit game
+    
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    //Method to quit game
     public void QuitGame()
     {
-        // Quit the application
+        //Quit the application
         Application.Quit();
     }
 }

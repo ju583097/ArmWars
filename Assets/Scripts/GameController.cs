@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     public AIController aiController;
     public SpriteRenderer backgroundSpriteRenderer; //Reference to the SpriteRenderer component of the background GameObject
     public Color playerWinColor; //Color for when the player is winning
-    public Color aiWinColor; // olor for when the AI is winning
+    public Color aiWinColor; //Color for when the AI is winning
     public float alphaThreshold = 0.5f; //Threshold for adjusting sprite opacity
 
     // Update is called once per frame

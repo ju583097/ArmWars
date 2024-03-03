@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL 10.unity
     guid: 274911275781d8243bb97733435f4391
+  - enabled: 1
+    path: Assets/Scenes/VersusMode.unity
+    guid: 252346537e0433e42ae531cc5ee1d168
   m_configObjects: {}
