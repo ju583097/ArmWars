@@ -148,24 +148,15 @@ void StartCountdown()
 
     void StartGame()
     {
-        // Implement logic to start the game or transition to the next scene
-        Debug.Log("Game started!");
-
-         // Activate player controller
-         GetComponent<PlayerController>().enabled = true;
+        GetComponent<PlayerController>().enabled = true;
     
-         // Activate AI controller
-         aiController.enabled = true;
+        aiController.enabled = true;
     
-         // Optionally, reset any game variables
         currentPresses = 0;
         currentTime = timeLimit;
     
-        // Optionally, reset UI elements
         UpdateTimerDisplay();
         countdownText.text = "";
-       
-
-    
+      
     }
 }
