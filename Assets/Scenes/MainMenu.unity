@@ -2020,6 +2020,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2139352503}
     m_Modifications:
+    - target: {fileID: 1252938829123431769, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -362
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252938829123431769, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
+      objectReference: {fileID: 0}
     - target: {fileID: 3247643844000642162, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2221,6 +2229,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1417510344}
+    - target: {fileID: 6690271715883170540, guid: 9582534cc33f7c5468463fa8fb030f5d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -362
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690271715883170540, guid: 9582534cc33f7c5468463fa8fb030f5d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
+      objectReference: {fileID: 0}
     - target: {fileID: 7330378246048519829, guid: 9582534cc33f7c5468463fa8fb030f5d, type: 3}
       propertyPath: m_Name
       value: Settings Panel
