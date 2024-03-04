@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
         else
         {
             //If neither is winning (tie or no presses yet), keep the default background color
-            AdjustBackgroundOpacity(Color.white); //Change to your default background color
+            AdjustBackgroundOpacity(Color.white); //Change to the default background color
         }
     }
 
