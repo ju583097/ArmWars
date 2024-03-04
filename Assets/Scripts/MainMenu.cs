@@ -20,10 +20,20 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+
+     public void OpenSettingsPanel()
+    {
+        SettingsManager settingsManager = FindObjectOfType<SettingsManager>();
+        if (settingsManager != null)
+        {
+            settingsManager.ToggleSettingsPanel(true);
+        }
+    }
+
     //Method to quit game
     public void QuitGame()
     {
-        //Quit the application
+        //Quit the application 
         Application.Quit();
     }
 }
