@@ -32,7 +32,7 @@ public class SettingsManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+
         }
     }
 
