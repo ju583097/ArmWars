@@ -1,25 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour
 {
     // Singleton instance
     public static SettingsManager Instance;
 
-    // Reference to the settings panel
+    
     public GameObject settingsPanel;
 
-    // Settings variables
+    public GameObject howToPlayPanel;
+
+    
+    public GameObject pauseMenuPanel;
+
+    
     public Slider soundVolumeSlider;
     public Slider musicVolumeSlider;
 
-    // Controls variables
-    // Add references to UI elements for controls rebinding
+    
 
     // Awake is called before Start
     void Awake()
     {
-        // Ensure only one instance of the SettingsManager exists
+       
         if (Instance == null)
         {
             Instance = this;
@@ -31,7 +36,7 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // Method to toggle the settings panel
+    
     public void ToggleSettingsPanel(bool state)
     {
         if (settingsPanel != null)
@@ -40,36 +45,75 @@ public class SettingsManager : MonoBehaviour
         }
     }
 
-    // Method to apply settings changes
+    
     public void ApplySettings()
     {
-        // Apply sound volume and music volume changes
-        // Apply controls changes
-        // Save settings to PlayerPrefs
+        
     }
 
-    // Method to display "How to Play" page
-    public void ShowHowToPlayPage()
+    
+   public void ShowHowToPlayPage()
+  {
+    if (howToPlayPanel != null)
     {
-        // Implement displaying "How to Play" page
+        howToPlayPanel.SetActive(true);
+        
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(false);
+        }
     }
+  }
 
-    // Method to delete saved data
-    public void DeleteSavedData()
+  
+   public void ReturnFromHowToPlay()
+   {
+    if (settingsPanel != null && howToPlayPanel != null)
     {
-        PlayerPrefs.DeleteAll();
-        // Optionally, reset other game data
+        howToPlayPanel.SetActive(false); 
+        settingsPanel.SetActive(true); 
     }
+   }
 
-    // Method to display controls rebinding page for single player mode
+   
+
+    
     public void ShowSinglePlayerControlsPage()
     {
-        // Implement displaying controls rebinding page for single player mode
+        
     }
 
-    // Method to display controls rebinding page for local versus multiplayer mode
+    
     public void ShowVersusPlayerControlsPage()
     {
-        // Implement displaying controls rebinding page for local versus multiplayer mode
+       
+    }
+
+    
+   public void ReturnToSettingsPanel()
+   {
+    if (settingsPanel != null)
+    {
+        settingsPanel.SetActive(true);
+    }
+
+    
+   }
+
+    
+    public void ReturnToSceneOrPauseMenu(string sceneName)
+    {
+        
+        if (string.IsNullOrEmpty(sceneName))
+        {
+            if (pauseMenuPanel != null)
+            {
+                pauseMenuPanel.SetActive(true);
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 }
