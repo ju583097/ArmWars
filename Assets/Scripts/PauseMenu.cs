@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject PausePanel;
+    public GameObject settingsPanel;
 
     // Update is called once per frame
     void Update()
@@ -23,6 +24,14 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+     public void ToggleSettingsPanel(bool state)
+    {
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(state);
+        }
     }
 
     public void Continue()

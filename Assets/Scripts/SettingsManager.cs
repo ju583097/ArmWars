@@ -90,17 +90,20 @@ public class SettingsManager : MonoBehaviour
     }
 
     
-   public void ReturnToSettingsPanel()
-   {
-    if (settingsPanel != null)
+  public void ReturnToSettingsPanel()
     {
         settingsPanel.SetActive(true);
+        howToPlayPanel.SetActive(false); 
+        pauseMenuPanel.SetActive(false); 
     }
 
-    
-   }
+    public void ReturnToPausePanel()
+    {
+        pauseMenuPanel.SetActive(true);
+        settingsPanel.SetActive(false);
+        howToPlayPanel.SetActive(false);
+    }
 
-    
     public void ReturnToSceneOrPauseMenu(string sceneName)
     {
         
