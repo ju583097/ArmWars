@@ -15,6 +15,8 @@ public class SettingsManager : MonoBehaviour
     
     public GameObject pauseMenuPanel;
 
+     public GameObject singlePlayerControlsPanel;
+
     
     public Slider soundVolumeSlider;
     public Slider musicVolumeSlider;
@@ -80,7 +82,8 @@ public class SettingsManager : MonoBehaviour
     
     public void ShowSinglePlayerControlsPage()
     {
-        
+        singlePlayerControlsPanel.SetActive(true); 
+        settingsPanel.SetActive(false);
     }
 
     
