@@ -86,6 +86,14 @@ public class SettingsManager : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
+    public void ReturnFromSinglePlayerControlsPanel()
+    {
+        if (singlePlayerControlsPanel != null)
+        {
+            singlePlayerControlsPanel.SetActive(false);
+        }
+    }
+
     
     public void ShowVersusPlayerControlsPage()
     {

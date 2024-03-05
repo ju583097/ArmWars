@@ -1,41 +1,95 @@
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class KeyBindManager : MonoBehaviour
 {
-    public TextMeshProUGUI keyBindText; 
-    public KeyCode defaultKey; 
-    private KeyCode currentKey; 
+    public static KeyBindManager Instance; 
 
-    void Start()
+    public TMP_Text keyBindText; 
+    private KeyCode currentKeyCode; 
+
+    private bool isChangingKey = false; 
+
+    // Awake is called before Start
+    void Awake()
     {
-        currentKey = PlayerPrefs.HasKey("KeyBind") ? (KeyCode)PlayerPrefs.GetInt("KeyBind") : defaultKey;
-        UpdateKeyBindText();
+        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            
+        }
+        
+
+        if (PlayerPrefs.HasKey("KeyBind"))
+     {
+        string savedKeyBind = PlayerPrefs.GetString("KeyBind");
+        if (Enum.TryParse(savedKeyBind, out KeyCode savedKeyCode))
+        {
+            currentKeyCode = savedKeyCode;
+            UpdateKeybindText();
+        }
+
+     }
     }
 
+    // Update is called once per frame
     void Update()
     {
         
-        if (Input.anyKeyDown)
+        if (isChangingKey && Input.anyKeyDown)
         {
-            
             foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
             {
-                if (Input.GetKeyDown(keyCode) && keyCode != currentKey)
+                if (Input.GetKeyDown(keyCode))
                 {
-                    currentKey = keyCode;
-                    PlayerPrefs.SetInt("KeyBind", (int)currentKey);
-                    PlayerPrefs.Save();
-                    UpdateKeyBindText();
+                    currentKeyCode = keyCode;
+                    keyBindText.text = currentKeyCode.ToString();
+                    isChangingKey = false; 
+                    SaveKeyBind(); 
                     break;
                 }
             }
         }
     }
 
-    void UpdateKeyBindText()
+    
+    public void ChangeKeyBind()
     {
-        keyBindText.text = currentKey.ToString();
+        isChangingKey = true; 
+    }
+
+    
+    private void SaveKeyBind()
+    {
+        
+    }
+
+      public KeyCode GetCurrentKey()
+    {
+        return currentKeyCode;
+    }
+
+   void UpdateKeybindText()
+  {
+    if (keyBindText != null)
+    {
+        keyBindText.text = currentKeyCode.ToString();
+    }
+    else
+    {
+        Debug.LogWarning("keyBindText is not assigned. Make sure to assign it in the Inspector.");
+    }
+  }
+    
+    public void ApplyKeyBind()
+    {
+        Debug.Log("Key bind applied: " + currentKeyCode);
+        PlayerPrefs.SetString("KeyBind", currentKeyCode.ToString());
     }
 }

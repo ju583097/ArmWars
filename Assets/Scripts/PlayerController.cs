@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     public Button retryButton;
     private bool gameOver = false; //Tracking the game to make sure timer does not continue after game is over
     private bool countdownFinished = false; //Tracks if countdown has finished
+    public KeyBindManager keyBindManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        keyBindManager = KeyBindManager.Instance;
         StartCountdown(); //Start the countdown when the game starts
         currentTime = timeLimit;
         UpdateTimerDisplay();
@@ -40,8 +42,9 @@ public class PlayerController : MonoBehaviour
         currentTime -= Time.deltaTime; //Decrement current time
         UpdateTimerDisplay(); //Update UI timer display
 
+        KeyCode currentKey = keyBindManager.GetCurrentKey(); 
         // Will check to see if the player is pressing the correct button
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(currentKey))
         {
             currentPresses++; //Increment the number of presses
             CheckWinCondition(); //Check if the player has reached the threshold
