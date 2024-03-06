@@ -16,7 +16,7 @@ public class SettingsManager : MonoBehaviour
     public GameObject pauseMenuPanel;
 
      public GameObject singlePlayerControlsPanel;
-
+     public GameObject multiPlayerControlsPanel;
     
     public Slider soundVolumeSlider;
     public Slider musicVolumeSlider;
@@ -97,7 +97,15 @@ public class SettingsManager : MonoBehaviour
     
     public void ShowVersusPlayerControlsPage()
     {
-       
+       multiPlayerControlsPanel.SetActive(true); 
+        settingsPanel.SetActive(false);
+    }
+     public void ReturnFromMultiPlayerControlsPanel()
+    {
+        if (multiPlayerControlsPanel != null)
+        {
+            multiPlayerControlsPanel.SetActive(false);
+        }
     }
 
     

@@ -1,40 +1,46 @@
-using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class VersusPlayerController : MonoBehaviour
 {
-    public KeyCode[] playerKeys; //Array of the key codes for each player
-    public int[] playerPresses; //Array to track the button presses for each player
-    public int threshold = 150; //Threshold for winning
-    public GameObject winPanel; //Reference to the win panel GameObjects for each player
-    private bool gameOver = false; 
-    private bool countdownFinished = false; 
-    public TextMeshProUGUI countdownText; 
-    public int currentPresses = 0; 
+    public int[] playerPresses; // Array to track the button presses for each player
+    public int threshold = 150; // Threshold for winning
+    public GameObject winPanel; // Reference to the win panel GameObject
+    private bool gameOver = false;
+    private bool countdownFinished = false;
+    public TMP_Text[] playerKeyBindTexts; // Array of TMP_Text for displaying key binds
+    public TextMeshProUGUI countdownText;
+    public int currentPresses = 0;
 
     void Start()
     {
-        StartCoroutine(StartCountdown()); 
+        StartCoroutine(StartCountdown());
     }
 
     void Update()
+{
+    if (!gameOver && countdownFinished)
     {
-        if (!gameOver && countdownFinished) 
+        // Loop through player keybind texts
+        for (int i = 0; i < playerKeyBindTexts.Length; i++)
         {
-            
-            for (int i = 0; i < playerKeys.Length; i++)
+            // Check if the current key is pressed for each player
+            if (Input.GetKeyDown(VersusKeyBindManager.Instance.GetCurrentKey(playerKeyBindTexts[i])))
             {
-                if (Input.GetKeyDown(playerKeys[i]))
+                // Increment the correct player's press count
+                if (i < playerPresses.Length)
                 {
                     playerPresses[i]++;
-                    currentPresses++; 
-                    CheckWinCondition(); 
+                    currentPresses++;
+                    CheckWinCondition();
                 }
             }
         }
     }
+}
+
 
     IEnumerator StartCountdown()
     {
@@ -46,7 +52,7 @@ public class VersusPlayerController : MonoBehaviour
             count--;
         }
 
-        countdownFinished = true; 
+        countdownFinished = true;
         countdownText.gameObject.SetActive(false);
     }
 
@@ -56,17 +62,16 @@ public class VersusPlayerController : MonoBehaviour
         {
             if (playerPresses[i] >= threshold)
             {
-                WinGame(i + 1); 
-                return; 
+                WinGame(i + 1);
+                return;
             }
         }
     }
 
     void WinGame(int playerNumber)
     {
-        winPanel.SetActive(true); 
-        gameOver = true; 
-        
+        winPanel.SetActive(true);
+        gameOver = true;
     }
 
     public void Retry()
