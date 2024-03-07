@@ -105,7 +105,7 @@ public class VersusKeyBindManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("keyBindText is not assigned. Make sure to assign it in the Inspector.");
+            Debug.LogWarning("");
         }
     }
 

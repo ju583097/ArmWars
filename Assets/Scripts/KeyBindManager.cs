@@ -11,7 +11,7 @@ public class KeyBindManager : MonoBehaviour
 
     private bool isChangingKey = false; 
 
-    // Awake is called before Start
+    
     void Awake()
     {
         
@@ -38,7 +38,7 @@ public class KeyBindManager : MonoBehaviour
      }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
@@ -83,7 +83,7 @@ public class KeyBindManager : MonoBehaviour
     }
     else
     {
-        Debug.LogWarning("keyBindText is not assigned. Make sure to assign it in the Inspector.");
+        Debug.LogWarning("");
     }
   }
     

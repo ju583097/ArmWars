@@ -6,51 +6,51 @@ using UnityEngine.SceneManagement;
 using TMPro;
 public class PlayerController : MonoBehaviour
 {
-    public int pressesPerSecond = 5; // Number of presses per second
-    public int currentPresses = 0; //Current number of presses by the player
-    public int threshold = 150; //Threshold for winning
-    public float timeLimit = 60f; //Time limit for the game
-    private float currentTime; //Current time remaining
-   public TextMeshProUGUI timerText; //Reference to TextMeshProUGUI for displaying timer
-    public AIController aiController; //Reference to AI controller script
-    public TextMeshProUGUI countdownText; //Reference to TextMeshProUGUI for displaying intial countdown
+    public int pressesPerSecond = 5; 
+    public int currentPresses = 0; 
+    public int threshold = 150; 
+    public float timeLimit = 60f; 
+    private float currentTime; 
+   public TextMeshProUGUI timerText; 
+    public AIController aiController; 
+    public TextMeshProUGUI countdownText; 
     public float countdownDuration = 3f;
     public GameObject winPanel; 
     public GameObject losePanel;
     public Button nextLevelButton; 
     public Button retryButton;
-    private bool gameOver = false; //Tracking the game to make sure timer does not continue after game is over
-    private bool countdownFinished = false; //Tracks if countdown has finished
+    private bool gameOver = false; 
+    private bool countdownFinished = false; 
     public KeyBindManager keyBindManager;
 
-    // Start is called before the first frame update
+   
     void Start()
     {
         keyBindManager = KeyBindManager.Instance;
-        StartCountdown(); //Start the countdown when the game starts
+        StartCountdown(); 
         currentTime = timeLimit;
         UpdateTimerDisplay();
     }
    
    
    
-    // Update is called once per frame
+    
     void Update()
     {
-      if (!gameOver && countdownFinished  &&  !losePanel.activeSelf) //Only update time if the game is not over and allow game logic after countdown finishes and pauses timer on loss
+      if (!gameOver && countdownFinished  &&  !losePanel.activeSelf) 
       {
-        currentTime -= Time.deltaTime; //Decrement current time
-        UpdateTimerDisplay(); //Update UI timer display
+        currentTime -= Time.deltaTime; 
+        UpdateTimerDisplay(); 
 
         KeyCode currentKey = keyBindManager.GetCurrentKey(); 
-        // Will check to see if the player is pressing the correct button
+       
         if (Input.GetKeyDown(currentKey))
         {
-            currentPresses++; //Increment the number of presses
-            CheckWinCondition(); //Check if the player has reached the threshold
+            currentPresses++; 
+            CheckWinCondition(); 
         }
 
-        //Check if time is up
+        
         if (currentTime <= 0)
         {
             LoseGame();
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (timerText != null)
         {
-            timerText.text = Mathf.CeilToInt(currentTime).ToString(); //Update UI text with remaining time
+            timerText.text = Mathf.CeilToInt(currentTime).ToString(); 
         }
     }
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     void WinGame()
     {
         winPanel.SetActive(true);
-        enabled = false; //Disables player controller when win panel gets active
+        enabled = false; 
         
     }
 
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         
         losePanel.SetActive(true);
-        enabled = false; //Disables player controller when win panel gets active
+        enabled = false; 
 
     }
    public void NextLevel()
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
     int nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
     SceneManager.LoadScene(nextSceneLoad);
 
-    //Updates the highest level completed in PlayerPrefs 
+     
     if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
     {
         PlayerPrefs.SetInt("levelAt", nextSceneLoad);
@@ -145,7 +145,7 @@ void StartCountdown()
         countdownText.text = "WRESTLE!";
         yield return new WaitForSeconds(1f);
 
-        countdownFinished = true; // Set countdownFinished to true
+        countdownFinished = true; 
         StartGame();
     }
 

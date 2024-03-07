@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour
 {
-    // Singleton instance
     public static SettingsManager Instance;
 
     
@@ -23,7 +22,7 @@ public class SettingsManager : MonoBehaviour
 
     
 
-    // Awake is called before Start
+    
     void Awake()
     {
        

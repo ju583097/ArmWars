@@ -5,12 +5,12 @@ using System.Collections;
 
 public class VersusPlayerController : MonoBehaviour
 {
-    public int[] playerPresses; // Array to track the button presses for each player
-    public int threshold = 150; // Threshold for winning
-    public GameObject winPanel; // Reference to the win panel GameObject
+    public int[] playerPresses; 
+    public int threshold = 150; 
+    public GameObject winPanel; 
     private bool gameOver = false;
     private bool countdownFinished = false;
-    public TMP_Text[] playerKeyBindTexts; // Array of TMP_Text for displaying key binds
+    public TMP_Text[] playerKeyBindTexts; 
     public TextMeshProUGUI countdownText;
     public int currentPresses = 0;
 
@@ -23,13 +23,13 @@ public class VersusPlayerController : MonoBehaviour
 {
     if (!gameOver && countdownFinished)
     {
-        // Loop through player keybind texts
+        
         for (int i = 0; i < playerKeyBindTexts.Length; i++)
         {
-            // Check if the current key is pressed for each player
+            
             if (Input.GetKeyDown(VersusKeyBindManager.Instance.GetCurrentKey(playerKeyBindTexts[i])))
             {
-                // Increment the correct player's press count
+                
                 if (i < playerPresses.Length)
                 {
                     playerPresses[i]++;
