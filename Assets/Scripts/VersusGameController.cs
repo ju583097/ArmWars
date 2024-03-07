@@ -8,6 +8,7 @@ public class VersusGameController : MonoBehaviour
     public Color player1WinColor; 
     public Color player2WinColor; 
     public float alphaThreshold = 0.5f; 
+    public bool gameOver = false;
 
     
     void Update()

@@ -13,6 +13,7 @@ public class VersusPlayerController : MonoBehaviour
     public TMP_Text[] playerKeyBindTexts; 
     public TextMeshProUGUI countdownText;
     public int currentPresses = 0;
+    public VersusGameController versusGameController;
 
     void Start()
     {
@@ -21,7 +22,11 @@ public class VersusPlayerController : MonoBehaviour
 
     void Update()
 {
-    if (!gameOver && countdownFinished)
+    if (gameOver)
+    {
+        versusGameController.gameOver = true;
+    }
+    if (!versusGameController.gameOver && countdownFinished)
     {
         
         for (int i = 0; i < playerKeyBindTexts.Length; i++)
@@ -72,6 +77,7 @@ public class VersusPlayerController : MonoBehaviour
     {
         winPanel.SetActive(true);
         gameOver = true;
+        
     }
 
     public void Retry()
