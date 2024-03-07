@@ -9,6 +9,18 @@ public class GameController : MonoBehaviour
     public Color playerWinColor; 
     public Color aiWinColor; 
     public float alphaThreshold = 0.5f; 
+    public GameObject selectedskin;
+    public GameObject Player;
+
+    private Sprite playersprite;
+
+
+    void Start()
+    {
+        playersprite = selectedskin.GetComponent<SpriteRenderer>().sprite;
+
+        Player.GetComponent<SpriteRenderer>().sprite = playersprite;
+    }
 
    
     void Update()
@@ -26,6 +38,12 @@ public class GameController : MonoBehaviour
         {
             AdjustBackgroundOpacity(Color.white); 
         }
+
+        if (selectedskin == null)
+    {
+        Debug.LogError("selectedskin GameObject is null in GameController!");
+        return;
+    }
     }
 
     void AdjustBackgroundOpacity(Color color)

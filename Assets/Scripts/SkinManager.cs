@@ -24,21 +24,35 @@ public class SkinManager : MonoBehaviour
         sr.sprite = skins[selectedSkin];
     }
 
-  public void BackOption()
+public void BackOption()
+{
+    if (skins.Count == 0)
     {
-        selectedSkin = selectedSkin - 1;
-        if (selectedSkin == skins.Count)
-        {
-            selectedSkin = -1;
-        }
-        sr.sprite = skins[selectedSkin];
+        Debug.LogError("Skins list is empty!");
+        return;
     }
 
-
-    public void PlayGame()
+    selectedSkin = selectedSkin - 1;
+    if (selectedSkin < 0)
     {
-        PrefabUtility.SaveAsPrefabAsset(playerskin, "Assets/SelectedSkin.prefab");
-        SceneManager.LoadScene("LevelSelection");
+        selectedSkin = skins.Count - 1;
     }
+    sr.sprite = skins[selectedSkin];
+}
+
+
+
+
+   public void PlayGame()
+ {
+    
+    GameObject selectedSkinInstance = Instantiate(playerskin);
+
+    
+    PrefabUtility.SaveAsPrefabAsset(selectedSkinInstance, "Assets/SelectedSkin.prefab");
+
+    
+    SceneManager.LoadScene("LevelSelection");
+ }
 
 }

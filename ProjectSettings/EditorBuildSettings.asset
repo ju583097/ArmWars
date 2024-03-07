@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VersusMode.unity
     guid: 252346537e0433e42ae531cc5ee1d168
+  - enabled: 1
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: 23f556cb5785e0b4090708afbabc42ca
   m_configObjects: {}
