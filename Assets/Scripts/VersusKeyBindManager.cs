@@ -25,7 +25,7 @@ public class VersusKeyBindManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+           
         }
 
         LoadKeyBindings();
