@@ -8,56 +8,90 @@ public class BackgroundMusic : MonoBehaviour
     public static BackgroundMusic instance;
 
     public AudioSource audioSource;
+
     public AudioClip[] audioClips;
 
     private void Awake()
     {
         if (instance == null)
         {
-            DontDestroyOnLoad(this.gameObject);
+            DontDestroyOnLoad(gameObject);
             instance = this;
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
 
         audioSource = GetComponent<AudioSource>();
 
-        // Subscribe to the sceneLoaded event
+        // Register to scene loaded event
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnDestroy()
-    {
-        // Unsubscribe from the sceneLoaded event
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    // Called when a scene is loaded
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Play the music whenever a scene is loaded
-        PlayMusic();
+        // Check the scene name and play the appropriate music
+        switch (scene.name)
+        {
+            case "MainMenu":
+                PlayMusic(0);
+                break;
+            case "CharacterSelect":
+                PlayMusic(1);
+                break;
+                case "LevelSelection":
+                PlayMusic(2);
+                break;
+            case "GameScreen":
+                PlayMusic(3);
+                break;
+                case "lvl2":
+                PlayMusic(4);
+                break;
+                case "lvl3":
+                PlayMusic(5);
+                break;
+                case "lvl4":
+                PlayMusic(6);
+                break;
+                case "lvl5":
+                PlayMusic(7);
+                break;
+                case "lvl6":
+                PlayMusic(8);
+                break;
+                 case "lvl7":
+                PlayMusic(9);
+                break;
+                 case "lvl8":
+                PlayMusic(10);
+                break;
+                  case "lvl9":
+                PlayMusic(11);
+                break;
+                 case "lvl10":
+                PlayMusic(12);
+                break;
+                case "VersusMode":
+                PlayMusic(13);
+                break;
+            default:
+                break;
+        }
     }
 
-  public void PlayMusic()
-{
-    if (audioClips.Length > 0)
+    private void PlayMusic(int clipIndex)
     {
-        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
-        audioSource.loop = true;
-
-        // Enable the audio source if it's disabled
-        if (!audioSource.enabled)
-            audioSource.enabled = true;
-
-        audioSource.Play();
+        if (clipIndex >= 0 && clipIndex < audioClips.Length)
+        {
+            audioSource.clip = audioClips[clipIndex];
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Invalid audio clip index: " + clipIndex);
+        }
     }
-    else
-    {
-        Debug.LogWarning("No audio clips assigned to BackgroundMusic.");
-    }
-}
-
 }
