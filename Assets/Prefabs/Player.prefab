@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2945039770910095921}
   - component: {fileID: 3526157274087430754}
   - component: {fileID: 6052436624071780470}
+  - component: {fileID: 8726794146226708496}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3526157274087430754
 SpriteRenderer:
@@ -110,3 +111,19 @@ MonoBehaviour:
   nextLevelButton: {fileID: 0}
   retryButton: {fileID: 0}
   keyBindManager: {fileID: 0}
+  tutorialText: {fileID: 0}
+--- !u!111 &8726794146226708496
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279196878513345286}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
