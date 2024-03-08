@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool gameOver = false; 
     private bool countdownFinished = false; 
     public KeyBindManager keyBindManager;
+    public TextMeshProUGUI tutorialText;
 
    
     void Start()
@@ -138,11 +139,13 @@ void StartCountdown()
         while (count > 0)
         {
             countdownText.text = count.ToString();
+            tutorialText.text = "Mash F to win!";
             yield return new WaitForSeconds(1f);
             count--;
         }
 
         countdownText.text = "WRESTLE!";
+        tutorialText.text = "";
         yield return new WaitForSeconds(1f);
 
         countdownFinished = true; 
