@@ -7449,6 +7449,7 @@ GameObject:
   - component: {fileID: 2007092584}
   - component: {fileID: 2007092583}
   - component: {fileID: 2007092585}
+  - component: {fileID: 2007092586}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -7545,6 +7546,27 @@ MonoBehaviour:
   versusGameController: {fileID: 1157889032}
   tutorialsText1: {fileID: 993065915}
   tutorialsText2: {fileID: 1898884244}
+--- !u!95 &2007092586
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007092582}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 571dc3851798edd40885cba5dca0f03e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2037045269
 GameObject:
   m_ObjectHideFlags: 0
@@ -7914,6 +7936,7 @@ GameObject:
   - component: {fileID: 2119051253}
   - component: {fileID: 2119051252}
   - component: {fileID: 2119051254}
+  - component: {fileID: 2119051255}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Untagged
@@ -8010,6 +8033,27 @@ MonoBehaviour:
   versusGameController: {fileID: 1157889032}
   tutorialsText1: {fileID: 993065915}
   tutorialsText2: {fileID: 1898884244}
+--- !u!95 &2119051255
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119051251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e40852a5cfa6764b9d2a802cb3ffef6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &65211828661435195
 GameObject:
   m_ObjectHideFlags: 0
