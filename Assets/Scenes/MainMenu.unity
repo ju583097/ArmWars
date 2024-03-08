@@ -2755,6 +2755,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnFromSinglePlayerControlsPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 6538410141147508603, guid: b8ad8b4b56df18d4996d98ae93b71d8a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -225
+      objectReference: {fileID: 0}
     - target: {fileID: 7441849834139479910, guid: b8ad8b4b56df18d4996d98ae93b71d8a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -174
@@ -4018,7 +4022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -362, y: -135}
+  m_AnchoredPosition: {x: -362, y: -225}
   m_SizeDelta: {x: 36.1686, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1933204946
@@ -4603,17 +4607,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 210015518}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: OpenSettingsPanel
-        m_Mode: 1
+      - m_Target: {fileID: 1417510344}
+        m_TargetAssemblyTypeName: SettingsManager, Assembly-CSharp
+        m_MethodName: ToggleSettingsPanel
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2033210805
 MonoBehaviour:
@@ -4899,7 +4903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1252938829123431769, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -135
+      value: -225
       objectReference: {fileID: 0}
     - target: {fileID: 3247643844000642162, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
