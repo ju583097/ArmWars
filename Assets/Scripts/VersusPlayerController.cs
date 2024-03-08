@@ -15,6 +15,9 @@ public class VersusPlayerController : MonoBehaviour
     public int currentPresses = 0;
     public VersusGameController versusGameController;
 
+    public TextMeshProUGUI tutorialsText1;
+    public TextMeshProUGUI tutorialsText2;
+
     void Start()
     {
         StartCoroutine(StartCountdown());
@@ -53,9 +56,15 @@ public class VersusPlayerController : MonoBehaviour
         while (count > 0)
         {
             countdownText.text = count.ToString();
+            tutorialsText1.text = "Mash F to win!";
+            tutorialsText2.text = "Mash L to win!";
             yield return new WaitForSeconds(1f);
             count--;
         }
+
+
+        tutorialsText1.text = "";
+        tutorialsText2.text = "";
 
         countdownFinished = true;
         countdownText.gameObject.SetActive(false);
