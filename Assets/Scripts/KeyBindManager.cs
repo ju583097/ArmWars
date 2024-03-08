@@ -83,13 +83,13 @@ public class KeyBindManager : MonoBehaviour
     }
     else
     {
-        Debug.LogWarning("");
+        
     }
   }
     
     public void ApplyKeyBind()
     {
-        Debug.Log("Key bind applied: " + currentKeyCode);
+        
         PlayerPrefs.SetString("KeyBind", currentKeyCode.ToString());
     }
 }

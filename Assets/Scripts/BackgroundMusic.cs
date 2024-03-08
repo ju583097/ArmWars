@@ -26,13 +26,13 @@ public class BackgroundMusic : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
-        // Register to scene loaded event
+      
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Check the scene name and play the appropriate music
+        
         switch (scene.name)
         {
             case "MainMenu":

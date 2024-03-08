@@ -105,7 +105,7 @@ public class VersusKeyBindManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("");
+            
         }
     }
 
@@ -124,8 +124,8 @@ public class VersusKeyBindManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Invalid player key: " + keyBindText.text);
-            return KeyCode.None; // Return a default key or handle the error as needed
+            
+            return KeyCode.None; 
         }
     }
 }

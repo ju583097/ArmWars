@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour
 
         if (selectedskin == null)
     {
-        Debug.LogError("selectedskin GameObject is null in GameController!");
+       
         return;
     }
     }

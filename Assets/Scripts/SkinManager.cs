@@ -29,7 +29,7 @@ public class SkinManager : MonoBehaviour
     {
         if (skins.Count == 0)
         {
-            Debug.LogError("");
+            
             return;
         }
 
