@@ -1,58 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+
 
 public class SkinManager : MonoBehaviour
 {
     public SpriteRenderer sr;
     public List<Sprite> skins = new List<Sprite>();
+    public List<string> skinNames = new List<string>();
     private int selectedSkin = 0;
     public GameObject playerskin;
+    public TextMeshProUGUI skinNameText; 
 
-
-
+    private void Start()
+    {
+        UpdateSkinInfo();
+    }
 
     public void NextOption()
     {
-        selectedSkin = selectedSkin + 1;
-        if (selectedSkin == skins.Count)
+        selectedSkin = (selectedSkin + 1) % skins.Count;
+        UpdateSkinInfo();
+    }
+
+    public void BackOption()
+    {
+        if (skins.Count == 0)
         {
-            selectedSkin = 0;
+            Debug.LogError("");
+            return;
         }
+
+        selectedSkin = (selectedSkin - 1 + skins.Count) % skins.Count;
+        UpdateSkinInfo();
+    }
+
+    public void PlayGame()
+    {
+        GameObject selectedSkinInstance = Instantiate(playerskin);
+        PrefabUtility.SaveAsPrefabAsset(selectedSkinInstance, "Assets/SelectedSkin.prefab");
+        SceneManager.LoadScene("LevelSelection");
+    }
+
+    private void UpdateSkinInfo()
+    {
         sr.sprite = skins[selectedSkin];
+        skinNameText.text = skinNames[selectedSkin]; 
     }
-
-public void BackOption()
-{
-    if (skins.Count == 0)
-    {
-        Debug.LogError("Skins list is empty!");
-        return;
-    }
-
-    selectedSkin = selectedSkin - 1;
-    if (selectedSkin < 0)
-    {
-        selectedSkin = skins.Count - 1;
-    }
-    sr.sprite = skins[selectedSkin];
-}
-
-
-
-
-   public void PlayGame()
- {
-    
-    GameObject selectedSkinInstance = Instantiate(playerskin);
-
-    
-    PrefabUtility.SaveAsPrefabAsset(selectedSkinInstance, "Assets/SelectedSkin.prefab");
-
-    
-    SceneManager.LoadScene("LevelSelection");
- }
-
 }
