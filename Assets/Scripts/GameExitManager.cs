@@ -17,4 +17,10 @@ public class GameExitManager : MonoBehaviour
         
         Application.Quit();
     }
-}
+
+     public void QuitGameButton()
+    {
+        
+        ExitGame();
+    }
+}      
