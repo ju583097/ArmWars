@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public int threshold = 150; 
     public float timeLimit = 60f; 
     private float currentTime; 
-   public TextMeshProUGUI timerText; 
+    public TextMeshProUGUI timerText; 
     public AIController aiController; 
     public TextMeshProUGUI countdownText; 
     public float countdownDuration = 3f;

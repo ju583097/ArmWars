@@ -20,14 +20,10 @@ public class KeyBindManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            
-        }
         
 
         if (PlayerPrefs.HasKey("KeyBind"))
-     {
+        {
         string savedKeyBind = PlayerPrefs.GetString("KeyBind");
         if (Enum.TryParse(savedKeyBind, out KeyCode savedKeyCode))
         {
@@ -51,39 +47,28 @@ public class KeyBindManager : MonoBehaviour
                     currentKeyCode = keyCode;
                     keyBindText.text = currentKeyCode.ToString();
                     isChangingKey = false; 
-                    SaveKeyBind(); 
                     break;
                 }
             }
         }
     }
 
-    
+
     public void ChangeKeyBind()
     {
-        isChangingKey = true; 
+        isChangingKey = true;
     }
-
     
-    private void SaveKeyBind()
-    {
-        
-    }
-
       public KeyCode GetCurrentKey()
-    {
-        return currentKeyCode;
-    }
+      {
+         return currentKeyCode;
+      }
 
    void UpdateKeybindText()
   {
     if (keyBindText != null)
     {
         keyBindText.text = currentKeyCode.ToString();
-    }
-    else
-    {
-        
     }
   }
     

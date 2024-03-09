@@ -8,12 +8,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject PausePanel;
     public GameObject settingsPanel;
 
-    
-    void Update()
-    {
-        
-    }
-
     public void Pause()
     {
         PausePanel.SetActive(true);

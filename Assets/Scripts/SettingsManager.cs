@@ -14,8 +14,8 @@ public class SettingsManager : MonoBehaviour
     
     public GameObject pauseMenuPanel;
 
-     public GameObject singlePlayerControlsPanel;
-     public GameObject multiPlayerControlsPanel;
+    public GameObject singlePlayerControlsPanel;
+    public GameObject multiPlayerControlsPanel;
     
     public Slider soundVolumeSlider;
     public Slider musicVolumeSlider;
@@ -25,55 +25,41 @@ public class SettingsManager : MonoBehaviour
     
     void Awake()
     {
-       
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        if(settingsPanel == null)
         {
-
+            //scream, cry, throw up, etc.
         }
     }
 
     
     public void ToggleSettingsPanel(bool state)
     {
-        if (settingsPanel != null)
-        {
-            settingsPanel.SetActive(state);
-        }
-    }
-
-    
-    public void ApplySettings()
-    {
-        
+        settingsPanel.SetActive(state);
     }
 
     
    public void ShowHowToPlayPage()
-  {
-    if (howToPlayPanel != null)
-    {
-        howToPlayPanel.SetActive(true);
-        
-        if (settingsPanel != null)
-        {
-            settingsPanel.SetActive(false);
-        }
-    }
-  }
+   {
+      if (howToPlayPanel != null)
+      {
+         howToPlayPanel.SetActive(true);
+         ToggleSettingsPanel(false);
+      }
+   }
 
   
    public void ReturnFromHowToPlay()
    {
-    if (settingsPanel != null && howToPlayPanel != null)
-    {
-        howToPlayPanel.SetActive(false); 
-        settingsPanel.SetActive(true); 
-    }
+      if (settingsPanel != null && howToPlayPanel != null)
+      {
+         howToPlayPanel.SetActive(false);
+         ToggleSettingsPanel(true);
+      }
    }
 
    
@@ -82,30 +68,26 @@ public class SettingsManager : MonoBehaviour
     public void ShowSinglePlayerControlsPage()
     {
         singlePlayerControlsPanel.SetActive(true); 
-        settingsPanel.SetActive(false);
+        ToggleSettingsPanel(false);
     }
 
     public void ReturnFromSinglePlayerControlsPanel()
     {
-        if (singlePlayerControlsPanel != null)
-        {
-            singlePlayerControlsPanel.SetActive(false);
-        }
+        singlePlayerControlsPanel.SetActive(false);
+        ToggleSettingsPanel(true);
     }
 
     
-    public void ShowVersusPlayerControlsPage()
-    {
-       multiPlayerControlsPanel.SetActive(true); 
-        settingsPanel.SetActive(false);
-    }
+     public void ShowVersusPlayerControlsPage()
+     {
+        multiPlayerControlsPanel.SetActive(true);
+        ToggleSettingsPanel(false);
+     }
      public void ReturnFromMultiPlayerControlsPanel()
-    {
-        if (multiPlayerControlsPanel != null)
-        {
-            multiPlayerControlsPanel.SetActive(false);
-        }
-    }
+     {
+        multiPlayerControlsPanel.SetActive(false);
+        ToggleSettingsPanel(true);
+     }
 
     
   public void ReturnToSettingsPanel()

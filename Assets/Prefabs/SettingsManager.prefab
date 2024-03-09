@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df3b2c92f2ae863458b8bc696e5e4abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingsPanel: {fileID: 0}
-  howToPlayPanel: {fileID: 0}
-  pauseMenuPanel: {fileID: 0}
-  singlePlayerControlsPanel: {fileID: 0}
+  settingsPanel: {fileID: 7330378246048519829, guid: 9582534cc33f7c5468463fa8fb030f5d, type: 3}
+  howToPlayPanel: {fileID: 6947992265160258242, guid: 8446101b84e16b34b8a75d12ddfddf46, type: 3}
+  pauseMenuPanel: {fileID: 343038897599970983, guid: 624f1d2f192e0344e946491a3e005982, type: 3}
+  singlePlayerControlsPanel: {fileID: 2365039004644544553, guid: b8ad8b4b56df18d4996d98ae93b71d8a, type: 3}
   multiPlayerControlsPanel: {fileID: 0}
   soundVolumeSlider: {fileID: 0}
   musicVolumeSlider: {fileID: 0}
