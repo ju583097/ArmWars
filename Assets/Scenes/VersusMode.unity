@@ -4755,7 +4755,7 @@ MonoBehaviour:
   backgroundSpriteRenderer: {fileID: 1157889029}
   player1WinColor: {r: 0.4481132, g: 0.57763773, b: 1, a: 1}
   player2WinColor: {r: 1, g: 0.2971698, b: 0.2971698, a: 0}
-  alphaThreshold: 0.5
+  alphaThreshold: 1
   gameOver: 0
 --- !u!1 &1171200358
 GameObject:

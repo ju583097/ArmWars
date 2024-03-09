@@ -3498,7 +3498,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bdeb95e372b2790458bb3a3cfbb33a81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3517,8 +3517,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157889028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.91, y: -0.0096, z: 0}
-  m_LocalScale: {x: 26.37544, y: 11.238939, z: 1}
+  m_LocalPosition: {x: -14.91, y: -0.0095979, z: 0}
+  m_LocalScale: {x: 1.1651196, y: 0.49647352, z: 0.044174414}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3539,9 +3539,9 @@ MonoBehaviour:
   playerController: {fileID: 2007092585}
   aiController: {fileID: 2119051254}
   backgroundSpriteRenderer: {fileID: 1157889029}
-  playerWinColor: {r: 0.1462264, g: 0.4040964, b: 1, a: 0}
-  aiWinColor: {r: 1, g: 0.1462264, b: 0.1462264, a: 0}
-  alphaThreshold: 0.5
+  playerWinColor: {r: 0.4292453, g: 0.60382915, b: 1, a: 0}
+  aiWinColor: {r: 1, g: 0.25943398, b: 0.25943398, a: 0}
+  alphaThreshold: 1
   selectedskin: {fileID: 6514991374131711263, guid: 528f99c8ef07aa54b996b50651d94707, type: 3}
   Player: {fileID: 2007092582}
 --- !u!1 &1171165946
@@ -3687,8 +3687,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4265,8 +4265,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5853,8 +5853,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
