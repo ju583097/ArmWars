@@ -12,15 +12,11 @@ public class GameExitManager : MonoBehaviour
         }
     }
 
-    void ExitGame()
+    public void ExitGame()
     {
         
         Application.Quit();
     }
 
-     public void QuitGameButton()
-    {
-        
-        ExitGame();
-    }
+    
 }      
