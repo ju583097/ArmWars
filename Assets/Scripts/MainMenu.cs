@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     
     public void StartGame()
     {
+        SkinManager.instance.playerskinPrefab.GetComponent<SpriteRenderer>().enabled = true;
         SceneManager.LoadScene("CharacterSelect");
     }
 
