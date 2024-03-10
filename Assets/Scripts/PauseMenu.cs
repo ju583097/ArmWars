@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1;
+        SkinManager.instance.playerskinPrefab.GetComponent<SpriteRenderer>().enabled = true;
         SceneManager.LoadScene("MainMenu");
     }
 
