@@ -12,6 +12,7 @@ public class SkinManager : MonoBehaviour
     private int selectedSkin = 0;
     public GameObject playerskinPrefab;
     public TextMeshProUGUI skinNameText;
+    public GameObject playerSelectButtons;
     
     void Awake()
     {
@@ -28,6 +29,10 @@ public class SkinManager : MonoBehaviour
     private void Start()
     {
         UpdateSkinNameText();
+    }
+    public void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void UpdateSkinNameText()
@@ -60,9 +65,18 @@ public class SkinManager : MonoBehaviour
     public void PlayGame()
     {
         playerskinPrefab.GetComponent<SpriteRenderer>().enabled = false;
+        playerSelectButtons.SetActive(false);
 //#if UNITY_EDITOR
    // UnityEditor.PrefabUtility.SaveAsPrefabAsset(playerskinPrefab, "Assets/SelectedSkin.prefab");
 //#endif
     SceneManager.LoadScene("LevelSelection");
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "CharacterSelect")
+        {
+            playerskinPrefab.GetComponent<SpriteRenderer>().enabled = true;
+            playerSelectButtons.SetActive(true);
+        }
     }
 }
