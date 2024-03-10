@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        playersprite = selectedskin.GetComponent<SpriteRenderer>().sprite;
+        playersprite = SkinManager.instance.playerskinPrefab.GetComponent<SpriteRenderer>().sprite;
 
         Player.GetComponent<SpriteRenderer>().sprite = playersprite;
     }
