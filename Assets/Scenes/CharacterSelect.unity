@@ -306,7 +306,7 @@ MonoBehaviour:
   - Supreme Leader Deltoid
   - Mullet Mauler
   - Gwibbie
-  playerskinPrefab: {fileID: 6514991374131711263, guid: 528f99c8ef07aa54b996b50651d94707, type: 3}
+  playerskinPrefab: {fileID: 341940516}
   skinNameText: {fileID: 974145877}
 --- !u!4 &73118855
 Transform:
@@ -570,6 +570,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &341940516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6514991374131711263, guid: 528f99c8ef07aa54b996b50651d94707, type: 3}
+  m_PrefabInstance: {fileID: 4139078433303823819}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &404276300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,6 +2186,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ff5b34a62f9a3b546a48a9de16d3946d, type: 3}
+    - target: {fileID: 1779273137226279833, guid: 528f99c8ef07aa54b996b50651d94707, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1779273137226279833, guid: 528f99c8ef07aa54b996b50651d94707, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

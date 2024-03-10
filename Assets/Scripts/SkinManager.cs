@@ -5,13 +5,14 @@ using TMPro;
 
 public class SkinManager : MonoBehaviour
 {
+
     public SpriteRenderer sr;
     public List<Sprite> skins = new List<Sprite>();
     public string[] skinNames; 
     private int selectedSkin = 0;
     public GameObject playerskinPrefab;
     public TextMeshProUGUI skinNameText;
-
+    
     private void Start()
     {
         UpdateSkinNameText();
@@ -46,10 +47,9 @@ public class SkinManager : MonoBehaviour
 
     public void PlayGame()
     {
-        GameObject selectedSkinInstance = Instantiate(playerskinPrefab);
 #if UNITY_EDITOR
-        UnityEditor.PrefabUtility.SaveAsPrefabAsset(selectedSkinInstance, "Assets/Prefabs/SelectedSkin.prefab");
+    UnityEditor.PrefabUtility.SaveAsPrefabAsset(playerskinPrefab, "Assets/SelectedSkin.prefab");
 #endif
-        SceneManager.LoadScene("LevelSelection");
+    SceneManager.LoadScene("LevelSelection");
     }
 }
