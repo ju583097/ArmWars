@@ -7361,6 +7361,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1205529503}
     - target: {fileID: 6052436624071780470, guid: 649b40a7ee30d954cae801da2143dad3, type: 3}
+      propertyPath: keyBindManager
+      value: 
+      objectReference: {fileID: 1885177634}
+    - target: {fileID: 6052436624071780470, guid: 649b40a7ee30d954cae801da2143dad3, type: 3}
       propertyPath: nextLevelButton
       value: 
       objectReference: {fileID: 515135423}
